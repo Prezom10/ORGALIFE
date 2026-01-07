@@ -1,0 +1,256 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Plastic Rose",
+      "price": 700,
+      "wholesalePrice": 350,
+      "category": "Love",
+      "description": "A beautiful everlasting plastic rose in a glass dome - perfect for expressing eternal love.",
+      "image": "/uploads/1767609842979-Screenshot 2026-01-03 164740.jpg",
+      "stock": 100,
+      "isInSlider": true
+    },
+    {
+      "id": "2",
+      "name": "Couple Ring",
+      "price": 1200,
+      "wholesalePrice": 900,
+      "category": "Jewelry",
+      "description": "Sleek silver couple rings with adjustable size - a symbol of your bond.",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400&auto=format&fit=crop",
+      "stock": 50,
+      "isInSlider": true
+    },
+    {
+      "id": "3",
+      "name": "Heart Frame",
+      "price": 800,
+      "wholesalePrice": 600,
+      "category": "Frames",
+      "description": "A wooden heart-shaped frame for your special memories - preserve your precious moments.",
+      "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=400&auto=format&fit=crop",
+      "stock": 30,
+      "isInSlider": false
+    },
+    {
+      "id": "1767793669627",
+      "name": "Grand Box",
+      "price": 999,
+      "wholesalePrice": 0,
+      "category": "Love",
+      "image": "/uploads/1767793669592-Gift for gf.png",
+      "stock": null,
+      "isInSlider": true,
+      "createdAt": "2026-01-07T13:47:49.627Z"
+    },
+    {
+      "id": "1767793815685",
+      "name": "Gold Rose",
+      "price": 250,
+      "wholesalePrice": 0,
+      "category": "Love",
+      "image": "/uploads/1767793815674-Gold rose .png",
+      "stock": null,
+      "isInSlider": false,
+      "createdAt": "2026-01-07T13:50:15.685Z"
+    },
+    {
+      "id": "1767794190279",
+      "name": " Heart Frame ",
+      "price": 500,
+      "wholesalePrice": 0,
+      "category": "Love",
+      "image": "/uploads/1767794190163-love frame.png",
+      "stock": null,
+      "isInSlider": true,
+      "createdAt": "2026-01-07T13:56:30.279Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1767791765814",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01305010956",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 2700,
+      "items": [
+        {
+          "id": "1",
+          "name": "Plastic Rose",
+          "price": 700,
+          "wholesalePrice": 350,
+          "category": "Love",
+          "description": "A beautiful everlasting plastic rose in a glass dome - perfect for expressing eternal love.",
+          "image": "/uploads/1767609842979-Screenshot 2026-01-03 164740.jpg",
+          "stock": 100,
+          "isInSlider": true
+        },
+        {
+          "id": "2",
+          "name": "Couple Ring",
+          "price": 1200,
+          "wholesalePrice": 900,
+          "category": "Jewelry",
+          "description": "Sleek silver couple rings with adjustable size - a symbol of your bond.",
+          "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400&auto=format&fit=crop",
+          "stock": 50,
+          "isInSlider": true
+        },
+        {
+          "id": "3",
+          "name": "Heart Frame",
+          "price": 800,
+          "wholesalePrice": 600,
+          "category": "Frames",
+          "description": "A wooden heart-shaped frame for your special memories - preserve your precious moments.",
+          "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=400&auto=format&fit=crop",
+          "stock": 30,
+          "isInSlider": false
+        }
+      ],
+      "discountCode": null,
+      "status": "Confirmed",
+      "createdAt": "2026-01-07T13:16:05.814Z",
+      "photo": null
+    },
+    {
+      "id": "1767791866951",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01305010956",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 700,
+      "items": [
+        {
+          "name": "Plastic Rose",
+          "price": 700,
+          "id": "1"
+        }
+      ],
+      "discountCode": null,
+      "status": "Confirmed",
+      "createdAt": "2026-01-07T13:17:46.951Z",
+      "photo": null
+    },
+    {
+      "id": "1767792137830",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01305010956",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 700,
+      "items": [
+        {
+          "name": "Plastic Rose",
+          "price": 700,
+          "id": "1"
+        }
+      ],
+      "discountCode": null,
+      "status": "Confirmed",
+      "createdAt": "2026-01-07T13:22:17.830Z",
+      "photo": null
+    },
+    {
+      "id": "1767793289099",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01305010956",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 1550,
+      "items": [
+        {
+          "id": "1",
+          "name": "Plastic Rose",
+          "price": 700,
+          "image": "/uploads/1767609842979-Screenshot 2026-01-03 164740.jpg",
+          "category": "Love",
+          "description": "A beautiful everlasting plastic rose in a glass dome - perfect for expressing eternal love.",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Couple Ring",
+          "price": 1200,
+          "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400&auto=format&fit=crop",
+          "category": "Jewelry",
+          "description": "Sleek silver couple rings with adjustable size - a symbol of your bond.",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Couple Ring",
+          "price": 1200,
+          "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400&auto=format&fit=crop",
+          "category": "Jewelry",
+          "description": "Sleek silver couple rings with adjustable size - a symbol of your bond.",
+          "quantity": 1
+        }
+      ],
+      "discountCode": "prezom",
+      "status": "Confirmed",
+      "createdAt": "2026-01-07T13:41:29.099Z",
+      "photo": null
+    },
+    {
+      "id": "1767794466573",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01787866870",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 624,
+      "items": [
+        {
+          "id": "1767793815685",
+          "name": "Gold Rose",
+          "price": 250,
+          "image": "/uploads/1767793815674-Gold rose .png",
+          "category": "Love",
+          "quantity": 1
+        },
+        {
+          "id": "1767793669627",
+          "name": "Grand Box",
+          "price": 999,
+          "image": "/uploads/1767793669592-Gift for gf.png",
+          "category": "Love",
+          "quantity": 1
+        }
+      ],
+      "discountCode": "prezom",
+      "status": "Pending",
+      "createdAt": "2026-01-07T14:01:06.573Z",
+      "photo": null
+    },
+    {
+      "id": "1767794540477",
+      "customerName": "MD Nahid Hasan",
+      "customerPhone": "01305010956",
+      "customerAddress": "tarakandi-2055,sorishabari,jamalpur,Bangladesh",
+      "total": 499,
+      "items": [
+        {
+          "id": "1767793669627",
+          "name": "Grand Box",
+          "price": 999,
+          "image": "/uploads/1767793669592-Gift for gf.png",
+          "category": "Love",
+          "quantity": 1
+        }
+      ],
+      "discountCode": "prezom",
+      "status": "Pending",
+      "createdAt": "2026-01-07T14:02:20.477Z",
+      "photo": null
+    }
+  ],
+  "creditOrders": [],
+  "reviews": [],
+  "analytics": {
+    "productClicks": {}
+  },
+  "settings": {
+    "adminPassword": "prezom",
+    "telegramBotToken": "8210984723:AAHJ2gh2ha6orqbExxk5as4DhJagYBcFS9k",
+    "telegramChatId": "5320621404",
+    "whatsappNumber": "8801305010956",
+    "discounts": []
+  }
+}

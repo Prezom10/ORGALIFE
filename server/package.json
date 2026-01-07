@@ -1,0 +1,28 @@
+{
+  "name": "orgalife-server",
+  "version": "1.0.0",
+  "description": "Orgalife Backend Server - E-commerce API with Telegram Integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecommerce",
+    "api",
+    "express",
+    "telegram"
+  ],
+  "author": "Orgalife",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "form-data": "^4.0.5",
+    "lowdb": "^1.0.0",
+    "multer": "^1.4.4",
+    "node-fetch": "^3.3.2"
+  }
+}

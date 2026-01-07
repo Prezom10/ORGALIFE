@@ -1,8 +1,8 @@
 
 import './style.css'
 
-const API_URL = 'http://localhost:5000/api';
-const SERVER_URL = 'http://localhost:5000';
+const API_URL = 'https://orgalife-server.onrender.com/api';
+const SERVER_URL = 'https://orgalife-server.onrender.com';
 
 interface Product {
   id: string;

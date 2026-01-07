@@ -51,19 +51,24 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Telegram Notification Logic
-// --- FIXED TELEGRAM LOGIC (Native HTTPS - No Fetch Needed) ---
-const sendTelegramNotification = (order) => {
+// --- FIXED TELEGRAM LOGIC (Async enabled with Photo Support) ---
+const sendTelegramNotification = async (order) => { // এখানে async যোগ করা হয়েছে
   try {
     const settings = db.get('settings').value();
     const token = settings?.telegramBotToken;
     const chatId = settings?.telegramChatId;
 
-    if (!token || !chatId) return;
+    if (!token || !chatId) {
+      console.log('[Telegram] Missing Token or Chat ID');
+      return;
+    }
 
+    console.log('[Telegram] Preparing notification for order #' + order.id.slice(-4));
+
+    // আইটেম লিস্ট তৈরি
     const itemsList = order.items.map(i => {
       const qty = i.quantity || 1;
-      return `• ${i.name} ${qty > 1 ? `(x${qty})` : ''} - BDT ${i.price}`;
+      return `• ${i.name} ${qty > 1 ? `(x${qty})` : ''} - ৳${i.price}`;
     }).join('\n');
 
     const message = `
@@ -71,7 +76,7 @@ const sendTelegramNotification = (order) => {
 --------------------------------
 *Order ID:* #${order.id.slice(-4)}
 
-👤 *Customer Name:* ${order.customerName}
+👤 *Customer:* ${order.customerName}
 📞 *Phone:* ${order.customerPhone || 'N/A'}
 📍 *Address:* ${order.customerAddress || 'N/A'}
 
@@ -79,10 +84,9 @@ const sendTelegramNotification = (order) => {
 ${itemsList}
 
 💰 *Total Amount:* ৳${order.total}
---------------------------------
-`.trim();
+--------------------------------`.trim();
 
-    // 1. Send Main Text Message
+    // ১. মেইন টেক্সট মেসেজ পাঠানো
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -90,13 +94,10 @@ ${itemsList}
     });
 
     if (response.ok) {
-      console.log('[Telegram] Message sent successfully');
-    } else {
-      const errorData = await response.text();
-      console.error('[Telegram] Failed to send message:', response.status, errorData);
+      console.log('[Telegram] Text message sent successfully');
     }
 
-    // 2. Send Photos (if any item has an image)
+    // ২. ছবি পাঠানো (যদি প্রোডাক্টের ইমেজ থাকে)
     for (const item of order.items) {
       if (item.image) {
         try {
@@ -105,15 +106,10 @@ ${itemsList}
           formData.append('caption', `Item: ${item.name}`);
 
           if (item.image.startsWith('http')) {
-            // Remote URL
             formData.append('photo', item.image);
           } else {
-            // Local File
-            // Remove leading slash if present (e.g. /uploads/foo.jpg -> uploads/foo.jpg)
             const rawPath = item.image.startsWith('/') ? item.image.slice(1) : item.image;
-            // Decode URI components (e.g. "Screenshot%202026.jpg" -> "Screenshot 2026.jpg")
-            const relativePath = decodeURIComponent(rawPath);
-            const filePath = path.join(__dirname, relativePath);
+            const filePath = path.join(__dirname, decodeURIComponent(rawPath));
             if (fs.existsSync(filePath)) {
               formData.append('photo', fs.createReadStream(filePath));
             } else {
@@ -124,16 +120,15 @@ ${itemsList}
           await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
             method: 'POST',
             body: formData
-            // node-fetch with form-data automatically sets headers (Content-Type: multipart/form-data)
           });
         } catch (imgErr) {
-          console.error(`[Telegram] Failed to send image for ${item.name}:`, imgErr.message);
+          console.error(`[Telegram] Image send failed for ${item.name}`);
         }
       }
     }
 
   } catch (e) {
-    console.error("[Telegram] Error:", e.message);
+    console.error("[Telegram] Fatal Error:", e.message);
   }
 };
 

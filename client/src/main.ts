@@ -1,4 +1,3 @@
-
 import './style.css'
 
 const API_URL = 'https://orgalife-server.onrender.com/api';
@@ -917,4 +916,12 @@ function renderStoreSettingsHTML(s: any) {
     }
   }
 };
+
+function showAddProduct() {
+  throw new Error('Function not implemented.');
+}
+
+function loadingAdminDashboard() {
+  throw new Error('Function not implemented.');
+}
 
